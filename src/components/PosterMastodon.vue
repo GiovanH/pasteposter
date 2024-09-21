@@ -80,6 +80,13 @@ export default {
       character_limit: 500
     }
   },
+  created() {
+    this.$nextTick(_ => {
+      if (!this.Store.mastodon_token) {
+        this.getOauthUrl()
+      }
+    })
+  },
   computed: {
     payload() {
       let text = this.input.body
