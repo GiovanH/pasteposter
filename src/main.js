@@ -50,7 +50,7 @@ app.mixin({
   // plugins: [ AsyncComputed ],
   data() {
     return {
-      Server: "//localhost:5000",
+      Server: `//${new URL(location.href).hostname}:5000`,
       Store: reactivableStore,
       shared_link_metadata: {}
     }
