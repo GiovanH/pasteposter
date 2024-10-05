@@ -336,9 +336,14 @@ export default {
         payload.caption = text
       }
       else if (this.relLink) {
+
         payload.type = "link"
-        payload.title = this.link_metadata[this.relLink]?.title || undefined
+        payload.title = this.link_metadata[this.input.link]?.title || undefined
         payload.url = this.relLink
+
+        payload.excerpt = this.link_metadata[this.input.link]?.description || undefined
+        payload.thumbnail = this.link_metadata[this.input.link]?.image_icon || undefined
+
         payload.description = text
       } else {
         payload.type = "text"
