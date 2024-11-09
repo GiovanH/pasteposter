@@ -74,21 +74,26 @@ export default {
     this.$refs["taginput"].value = this.draft.tags.join(' ')
     this.$refs["imageDrop"].onpaste = (pasteEvent) => {
       // consider the first item (can be easily extended for multiple items)
-      var item = pasteEvent.clipboardData.items[0];
 
       this.$logger.info(pasteEvent)
 
-      if (item.type.indexOf("image") === 0) {
-        var blob = item.getAsFile();
+      for (const item of pasteEvent.clipboardData.items) {
+        this.$logger.info(item)
 
-        var reader = new FileReader();
-        reader.onload = (event) => {
-          this.draft.images.push(event.target.result);
-          this.$logger.info(this.draft.images)
-        };
+        if (item.type.indexOf("image") === 0) {
+          var blob = item.getAsFile();
 
-        reader.readAsDataURL(blob);
+          var reader = new FileReader();
+          reader.onload = (event) => {
+            this.draft.images.push(event.target.result);
+            this.$logger.info(this.draft.images)
+          };
+
+          reader.readAsDataURL(blob);
+        }
+
       }
+
     }
   },
   watch: {
