@@ -97,7 +97,7 @@ export default {
         text += ` ${this.relLink}`
       }
       return {
-        "status": text,
+        "status": text.trim(),
         "sensitive": this.input.hide,
         "spoiler_text": this.input.label,
         "media_ids": this.input.images.map(base64src => {

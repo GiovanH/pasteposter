@@ -107,7 +107,7 @@ export default {
   computed: {
     isPreloaded(){
       if (!this.payload) return false
-      if (!this.payload.text) return false
+      if (!this.payload.text && !this.payload.embed) return false
       if (this.payload._length > this.character_limit) return false
       return (!JSON.stringify(this.payload).includes("UNLOADED"))
     },
