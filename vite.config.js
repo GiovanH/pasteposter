@@ -21,6 +21,7 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    preserveSymlinks: true,
     alias: {
       vue: '@vue/compat',
       '@': fileURLToPath(new URL('./src', import.meta.url))

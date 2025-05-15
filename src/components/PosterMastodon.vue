@@ -71,6 +71,7 @@ import PosterCommon from './PosterCommon.vue'
 
 export default {
   name: "PosterMastodon",
+  shortname: "mtd",
   extends: PosterCommon,
   props: ['input', 'CLIENT_ID', 'CLIENT_SECRET', 'MASTO_HOST'],
   data () {

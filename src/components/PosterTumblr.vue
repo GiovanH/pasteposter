@@ -208,6 +208,7 @@ function convertForTumblr(imgURI,sep){
 
 export default {
   name: "PosterTumblr",
+  shortname: "tu",
   components: {PopupLink},
   extends: PosterCommon,
   props: ['input', 'consumer_key', 'consumer_secret'],

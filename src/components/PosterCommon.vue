@@ -23,7 +23,7 @@ export default {
       if (this.input.link) {
         try {
           const u = new URL(this.input.link)
-          u.searchParams.append('ref', this.$options.name)
+          u.searchParams.append('campaign', this.$options.shortname || this.$options.name)
           return u.toString()
         } catch {
           return this.input.link

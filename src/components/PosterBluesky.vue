@@ -87,6 +87,7 @@ import PosterCommon from './PosterCommon.vue'
 
 export default {
   name: "PosterBluesky",
+  shortname: "bsky",
   extends: PosterCommon,
   props: ['input', 'BSKY_HOST'],
   data () {

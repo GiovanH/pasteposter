@@ -63,6 +63,7 @@ import PopupLink from './PopupLink.vue'
 
 export default {
   name: "PosterTwitter",
+  shortname: "tw",
   components: {PopupLink},
   extends: PosterCommon,
   props: ['input'],
